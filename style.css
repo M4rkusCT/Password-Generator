@@ -1,0 +1,11 @@
+header > h1 {
+    text-align: center;
+}
+
+main > div {
+    text-align: center;
+}
+
+main > #generatorPassword > #length {
+    width: 35px;
+}
