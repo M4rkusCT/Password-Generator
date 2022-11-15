@@ -4,7 +4,7 @@ const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const upperCaseLetters = "ABCDEFGHIJKLMNOPQSRTUVWXYZ";
 const numbers = "0123456789";
 const specialCharacters = "~!@#$%^&*()_+=|";
-var newPassword = "";
+let newPassword = "";
 
 const generatePassword = (lower, upper, number, special) => {
     let arrCharacters = [];
@@ -25,13 +25,13 @@ generate.addEventListener("click", (e) => {
     e.preventDefault();
     const length = document.getElementById("length").value;
     newPassword = "";
-    if(Number(length) <= 0) alert("Tienes que poner la longitud que sea mayor de 0.");
+    if(Number(length) <= 0) alert("You have to put the length that is greater than 0.");
     else {   
         for(let i = 0;i < length;i++) {
             newPassword += generatePassword(lowerCaseLetters, upperCaseLetters, numbers, specialCharacters);
             if(newPassword === "") {
                 i = length;
-                alert("Tienes que escoger que contendra la contraseña.");
+                alert("You have to choose what the password will contain.");
             }
         }
         document.getElementById("password").value = Number(newPassword) === 0 ? "" :  newPassword;
