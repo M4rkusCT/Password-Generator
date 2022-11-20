@@ -25,7 +25,7 @@ generate.addEventListener("click", (e) => {
     e.preventDefault();
     const length = document.getElementById("length").value;
     newPassword = "";
-    if(Number(length) <= 0) alert("You have to put the length that is greater than 0.");
+    if(Number(length) < 8) alert("You have to put the length that is greater than 8.");
     else {   
         for(let i = 0;i < length;i++) {
             newPassword += generatePassword(lowerCaseLetters, upperCaseLetters, numbers, specialCharacters);
@@ -34,6 +34,6 @@ generate.addEventListener("click", (e) => {
                 alert("You have to choose what the password will contain.");
             }
         }
-        document.getElementById("password").value = Number(newPassword) === 0 ? "" :  newPassword;
+        document.getElementById("password").value = newPassword === "" ? "" :  newPassword;
     }
 });
